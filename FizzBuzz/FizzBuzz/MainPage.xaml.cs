@@ -82,6 +82,7 @@ namespace FizzBuzz
 
         public void Reset_Value()
         {            
+            //TODO: When this is initialized it does it 5 times, putting incorrectcount to 5 when it should be 0. Fix.
             IsSuccess.Text = string.Empty;
             EnableButtons();
             if (IsCorrect != null)
