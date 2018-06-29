@@ -2,13 +2,92 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FizzBuzz"
-             x:Class="FizzBuzz.MainPage">
+             x:Class="FizzBuzz.MainPage"
+             Title="Numbers">
 
-    <StackLayout>
+    <StackLayout Padding="5,10,5,5">
         <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Grid HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                   Grid.ColumnSpan ="4"
+                   Text="{Binding Number}" 
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="70"
+                   FontAttributes="Bold"
+                   x:Name="MyNumber"
+                   PropertyChanged="Reset_Value"/>
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="4"
+                   HorizontalOptions="CenterAndExpand"
+                   x:Name="IsSuccess"/>
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Fizz"
+                    TextColor="White"
+                    BackgroundColor="DarkViolet"
+                    Clicked="Select_Fizz"
+                    x:Name="FizzButton"/>
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Buzz"
+                    TextColor="White"
+                    BackgroundColor="DarkTurquoise"
+                    Clicked="Select_Buzz"
+                    x:Name="BuzzButton"/>
+            <Button Grid.Row="2"
+                    Grid.Column="2"
+                    Text="FizzBuzz"
+                    TextColor="White"
+                    BackgroundColor="DarkGoldenrod"
+                    Clicked="Select_FizzBuzz"
+                    x:Name="FizzBuzzButton"/>
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    Text="None"
+                    TextColor="White"
+                    BackgroundColor="DarkRed"
+                    Clicked="Select_None"
+                    x:Name="NoneButton"/>
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Correct Answers"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Green"/>
+            <Label Grid.Row="3"
+                   Grid.Column="1"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   x:Name="CorrectCount"
+                   Text="0"
+                   TextColor="Green"
+                   FontAttributes="Bold"/>
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   Text="Incorrect Answers"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Red"/>
+            <Label Grid.Row="3"
+                   Grid.Column="3"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   x:Name="IncorrectCount"
+                   Text="0"
+                   TextColor="Red"
+                   FontAttributes="Bold"/>
+        </Grid>
     </StackLayout>
-
 </ContentPage>
