@@ -90,6 +90,10 @@ namespace FizzBuzz
                 {
                     IsCorrect = false;
                 }
+                else
+                {
+                    SetIncorrectCount();
+                }
             }
             else
             {
@@ -128,7 +132,6 @@ namespace FizzBuzz
             IsSuccess.Text = !string.IsNullOrEmpty(textValue) ? $"Incorrect: Should be {textValue}" : "Incorrect";
             IsSuccess.TextColor = Color.Red;
             IsCorrect = false;
-            SetIncorrectCount();
         }
 
         private void SetIncorrectCount()
